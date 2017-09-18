@@ -1,0 +1,41 @@
+{
+  "name": "brain-games",
+  "version": "0.0.1",
+  "description": "Simple command line game",
+  "main": "brain-games.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "scripts": {
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublish": "npm run lint && npm run build",
+    "lint": "eslint src/bin/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rabinzon/project-lvl1-s128.git"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "nodejs",
+    "hexlet"
+  ],
+  "author": "Ildar Gilfanov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rabinzon/project-lvl1-s128/issues"
+  },
+  "homepage": "https://github.com/Rabinzon/project-lvl1-s128#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.7.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}
