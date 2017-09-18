@@ -1,6 +1,6 @@
 {
-  "name": "brain-games",
-  "version": "0.0.1",
+  "name": "games-for-brain",
+  "version": "0.0.2",
   "description": "Simple command line game",
   "main": "brain-games.js",
   "bin": {
