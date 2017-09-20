@@ -7,6 +7,7 @@
 [![Issue Count](https://codeclimate.com/github/Rabinzon/project-lvl1-s128/badges/issue_count.svg)](https://codeclimate.com/github/Rabinzon/project-lvl1-s128)
 [![Build Status](https://travis-ci.org/Rabinzon/project-lvl1-s128.svg)](https://travis-ci.org/Rabinzon/project-lvl1-s128)
 
+[![asciicast](https://asciinema.org/a/wUby3tROYrZvpjPaRt4OCdnRH.png)](https://asciinema.org/a/wUby3tROYrZvpjPaRt4OCdnRH)
 ### Quick start:
 
 ```sh
