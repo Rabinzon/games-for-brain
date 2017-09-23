@@ -1,44 +1,43 @@
-
-import getRandomInt from '../getRandomInt';
 import Game from '..';
+import getRandomInt from '../utils';
 
-const assignment = 'Balance the given number.';
+const gameDescription = 'Balance the given number.';
 
-const balanceArray = (arr) => {
-  const min = Math.min(...arr);
-  const max = Math.max(...arr);
+const balance = (array) => {
+  const min = Math.min(...array);
+  const max = Math.max(...array);
 
   if (max - min <= 1) {
-    return arr;
+    return array;
   }
 
-  const newArray = arr.map((val, key) => {
-    if (key === arr.indexOf(min)) {
+  const newArray = array.map((val, key) => {
+    if (key === array.indexOf(min)) {
       return val + (max - val - 1);
     }
 
-    if (key === arr.indexOf(max)) {
+    if (key === array.indexOf(max)) {
       return val - (val - min - 1);
     }
     return val;
   });
-  return balanceArray(newArray);
+  return balance(newArray);
 };
 
-const balance = (number) => {
-  const arr = String(number).split('').map(x => (Number(x)));
+const solve = (number) => {
+  const array = String(number).split('').map(x => (Number(x)));
 
-  return balanceArray(arr).sort().join('');
+  return balance(array).sort().join('');
 };
 
-const getQNA = () => {
-  const randomInt = getRandomInt(100, 999);
-  const answer = balance(randomInt);
+const getQuestionAndAnswer = () => {
+  const question = getRandomInt(100, 999);
+  const answer = solve(question);
 
   return {
     answer,
-    question: randomInt,
+    question,
   };
 };
 
-export default () => Game(assignment, getQNA);
+export default () => Game(gameDescription, getQuestionAndAnswer);
