@@ -2,9 +2,13 @@ import readlineSync from 'readline-sync';
 import gameEven from './games/even';
 import gameCalc from './games/calc';
 
-const playQuiz = (name, fn, i = 0) => {
-  const { isCorrectAnswer, userAnswer, correctAnswer } = fn();
+const play = (fn, name = null, i = 0) => {
+  if (i === 0) {
+    name = readlineSync.question('May I have your name? ');
+    console.log(`Hello, ${name}`);
+  }
 
+  const { isCorrectAnswer, userAnswer, correctAnswer } = fn();
   console.log(`Your answer: ${userAnswer}`);
 
   if (isCorrectAnswer) {
@@ -19,21 +23,21 @@ const playQuiz = (name, fn, i = 0) => {
     return;
   }
 
-  playQuiz(name, fn, i + 1);
+  play(fn, name, i + 1);
 };
 
 export default (game) => {
-  console.log('Welcome to the Brain Games! \nAnswer "yes" if number even otherwise answer "no".\n');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}`);
+  const welcomeText = 'Welcome to the Brain Games!';
 
   switch (game) {
     case 'calc': {
-      playQuiz(name, gameCalc);
+      console.log(welcomeText + '\nWhat is the result of the expression?.\n');
+      play(gameCalc);
       break;
     }
     case 'even': {
-      playQuiz(name, gameEven);
+      console.log(welcomeText + '\nAnswer "yes" if number even otherwise answer "no".\n');
+      play(gameEven);
       break;
     }
     default: {
