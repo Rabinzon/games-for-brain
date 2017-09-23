@@ -1,5 +1,5 @@
-import getRandomInt from '../getRandomInt';
 import Game from '..';
+import getRandomInt from '../utils';
 
 const add = (x, y) => x + y;
 const subtract = (x, y) => x - y;
@@ -19,9 +19,9 @@ const operations = [
 ];
 
 
-const assignment = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 
-const getQNA = () => {
+const getQuestionAndAnswer = () => {
   const randomLeftNumber = getRandomInt(1, 20);
   const randomRightNumber = getRandomInt(1, 20);
   const operation = operations[getRandomInt(0, 2)];
@@ -34,4 +34,4 @@ const getQNA = () => {
   };
 };
 
-export default () => Game(assignment, getQNA);
+export default () => Game(gameDescription, getQuestionAndAnswer);

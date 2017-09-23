@@ -1,11 +1,11 @@
 import readlineSync from 'readline-sync';
 
-const play = (getQNA, i = 0) => {
-  if (i === 3) {
-    return true;
-  }
+const NUMBER_OF_QUIZES = 3;
 
-  const { question, answer } = getQNA();
+const play = (getQuestionAndAnswer, i = 0) => {
+  if (i === NUMBER_OF_QUIZES) return true;
+
+  const { question, answer } = getQuestionAndAnswer();
   const userAnswer = readlineSync.question(`Question: ${question} `);
 
   console.log(`Your answer: ${userAnswer}`);
@@ -16,16 +16,16 @@ const play = (getQNA, i = 0) => {
   }
 
   console.log('Correct!');
-  return play(getQNA, i + 1);
+  return play(getQuestionAndAnswer, i + 1);
 };
 
-export default (assignment, getQNA) => {
+export default (gameDescription, getQuestionAndAnswer) => {
   console.log('Welcome to the Brain Games!');
-  console.log(`${assignment}\n`);
+  console.log(`${gameDescription}\n`);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
 
-  const isSuccessGame = play(getQNA);
+  const isSuccessGame = play(getQuestionAndAnswer);
 
   if (isSuccessGame) {
     console.log(`Congratulations, ${name}!`);
