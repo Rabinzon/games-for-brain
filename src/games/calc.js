@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
-import { getRandomInt } from '../utils/';
+import getRandomInt from '../getRandomInt';
+import Game from '..';
 
 const add = (x, y) => x + y;
 const subtract = (x, y) => x - y;
@@ -18,16 +18,20 @@ const operations = [
   },
 ];
 
-export default () => {
+
+const assignment = 'What is the result of the expression?';
+
+const getQNA = () => {
   const randomLeftNumber = getRandomInt(1, 20);
   const randomRightNumber = getRandomInt(1, 20);
   const operation = operations[getRandomInt(0, 2)];
-  const userAnswer = readlineSync.question(`Question: ${randomLeftNumber} ${operation.text} ${randomRightNumber} `);
-  const correctAnswer = operation.method(randomLeftNumber, randomRightNumber);
+  const question = `${randomLeftNumber} ${operation.text} ${randomRightNumber}`;
+  const answer = operation.method(randomLeftNumber, randomRightNumber);
 
   return {
-    userAnswer,
-    correctAnswer,
-    isCorrectAnswer: Number(userAnswer) === correctAnswer,
+    question,
+    answer: String(answer),
   };
 };
+
+export default () => Game(assignment, getQNA);

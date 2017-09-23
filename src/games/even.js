@@ -1,17 +1,18 @@
-import readlineSync from 'readline-sync';
-import { getRandomInt } from '../utils/';
+import getRandomInt from '../getRandomInt';
+import Game from '..';
 
 const isEven = num => (num % 2) === 0;
 
-export default () => {
+const assignment = 'Answer "yes" if number even otherwise answer "no".';
+
+const getQNA = () => {
   const randomNumber = getRandomInt(1, 20);
-  const userAnswer = readlineSync.question(`Question: ${randomNumber} `);
-  const isEvenNumber = isEven(randomNumber);
-  const correctAnswer = isEvenNumber ? 'yes' : 'no';
+  const answer = isEven(randomNumber) ? 'yes' : 'no';
 
   return {
-    userAnswer,
-    correctAnswer,
-    isCorrectAnswer: userAnswer === correctAnswer,
+    answer,
+    question: randomNumber,
   };
 };
+
+export default () => Game(assignment, getQNA);
