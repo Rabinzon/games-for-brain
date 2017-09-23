@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { isEven, getRandomInt } from '../utils/';
+import { getRandomInt } from '../utils/';
+
+const isEven = num => (num % 2) === 0;
 
 export default () => {
   const randomNumber = getRandomInt(1, 20);
