@@ -1,32 +1,35 @@
 import readlineSync from 'readline-sync';
-import { isEven, getRandomInt } from './utils';
 
-const playQuiz = (name, i = 0) => {
-	const randomNumber = getRandomInt(1, 20);
-	const answer = readlineSync.question(`Question: ${randomNumber} `);
-	const isEvenNumber = isEven(randomNumber);
-	const correctAnswer = isEvenNumber ? 'yes' : 'no';
+const play = (getQNA, i = 0) => {
+  if (i === 3) {
+    return true;
+  }
 
-	console.log(`Your answer: ${answer}`);
+  const { question, answer } = getQNA();
+  const userAnswer = readlineSync.question(`Question: ${question} `);
 
-	if (correctAnswer === answer) {
-		console.log('Correct!');
-	} else {
-		console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
-		return;
-	}
+  console.log(`Your answer: ${userAnswer}`);
 
-	if (i === 2) {
-		console.log(`Congratulations, ${name}!`);
-		return;
-	}
+  if (userAnswer !== answer) {
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+    return false;
+  }
 
-	playQuiz(name, i + 1);
+  console.log('Correct!');
+  return play(getQNA, i + 1);
 };
 
-export default () => {
-	console.log('Welcome to the Brain Games! \nAnswer "yes" if number even otherwise answer "no".\n');
-	const name = readlineSync.question('May I have your name? ');
-	console.log(`Hello, ${name}`);
-	playQuiz(name);
+export default (assignment, getQNA) => {
+  console.log('Welcome to the Brain Games!');
+  console.log(`${assignment}\n`);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}`);
+
+  const isSuccessGame = play(getQNA);
+
+  if (isSuccessGame) {
+    console.log(`Congratulations, ${name}!`);
+  } else {
+    console.log(`Let's try again, ${name}!`);
+  }
 };
