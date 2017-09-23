@@ -3,6 +3,11 @@ import gameEven from './games/even';
 import gameCalc from './games/calc';
 
 const play = (fn, name = null, i = 0) => {
+  if (i === 3) {
+    console.log(`Congratulations, ${name}!`);
+    return;
+  }
+
   if (i === 0) {
     name = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${name}`);
@@ -18,25 +23,21 @@ const play = (fn, name = null, i = 0) => {
     return;
   }
 
-  if (i === 2) {
-    console.log(`Congratulations, ${name}!`);
-    return;
-  }
 
   play(fn, name, i + 1);
 };
 
 export default (game) => {
-  const welcomeText = 'Welcome to the Brain Games!';
+  console.log('Welcome to the Brain Games!');
 
   switch (game) {
     case 'calc': {
-      console.log(welcomeText + '\nWhat is the result of the expression?.\n');
+      console.log('What is the result of the expression?.\n');
       play(gameCalc);
       break;
     }
     case 'even': {
-      console.log(welcomeText + '\nAnswer "yes" if number even otherwise answer "no".\n');
+      console.log('Answer "yes" if number even otherwise answer "no".\n');
       play(gameEven);
       break;
     }
