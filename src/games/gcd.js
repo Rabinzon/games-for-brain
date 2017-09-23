@@ -1,14 +1,14 @@
-import getRandomInt from '../getRandomInt';
 import Game from '..';
+import getRandomInt from '../utils';
 
 const gcd = (x, y) => {
   if (!y) return x;
   return gcd(y, x % y);
 };
 
-const assignment = 'Find the greatest common divisor of given numbers.';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
-const getQNA = () => {
+const getQuestionAndAnswer = () => {
   const leftInt = getRandomInt(1, 70);
   const rightInt = getRandomInt(1, 70);
 
@@ -18,4 +18,4 @@ const getQNA = () => {
   };
 };
 
-export default () => Game(assignment, getQNA);
+export default () => Game(gameDescription, getQuestionAndAnswer);
