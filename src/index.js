@@ -1,32 +1,43 @@
 import readlineSync from 'readline-sync';
-import { isEven, getRandomInt } from './utils';
+import gameEven from './games/even';
+import gameCalc from './games/calc';
 
-const playQuiz = (name, i = 0) => {
-	const randomNumber = getRandomInt(1, 20);
-	const answer = readlineSync.question(`Question: ${randomNumber} `);
-	const isEvenNumber = isEven(randomNumber);
-	const correctAnswer = isEvenNumber ? 'yes' : 'no';
+const playQuiz = (name, fn, i = 0) => {
+  const { isCorrectAnswer, userAnswer, correctAnswer } = fn();
 
-	console.log(`Your answer: ${answer}`);
+  console.log(`Your answer: ${userAnswer}`);
 
-	if (correctAnswer === answer) {
-		console.log('Correct!');
-	} else {
-		console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
-		return;
-	}
+  if (isCorrectAnswer) {
+    console.log('Correct!');
+  } else {
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
+    return;
+  }
 
-	if (i === 2) {
-		console.log(`Congratulations, ${name}!`);
-		return;
-	}
+  if (i === 2) {
+    console.log(`Congratulations, ${name}!`);
+    return;
+  }
 
-	playQuiz(name, i + 1);
+  playQuiz(name, fn, i + 1);
 };
 
-export default () => {
-	console.log('Welcome to the Brain Games! \nAnswer "yes" if number even otherwise answer "no".\n');
-	const name = readlineSync.question('May I have your name? ');
-	console.log(`Hello, ${name}`);
-	playQuiz(name);
+export default (game) => {
+  console.log('Welcome to the Brain Games! \nAnswer "yes" if number even otherwise answer "no".\n');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}`);
+
+  switch (game) {
+    case 'calc': {
+      playQuiz(name, gameCalc);
+      break;
+    }
+    case 'even': {
+      playQuiz(name, gameEven);
+      break;
+    }
+    default: {
+      throw new Error(`Unknown game '${game}'`);
+    }
+  }
 };
