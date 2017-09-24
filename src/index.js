@@ -7,9 +7,9 @@ const play = (getQuestionAndAnswer, i = 0) => {
 
   const { question, answer } = getQuestionAndAnswer();
   console.log(`Question: ${question} `);
-  const userAnswer = readlineSync.question(`Your answer: `);
+  const userAnswer = readlineSync.question('Your answer: ');
 
-  if (userAnswer !== answer) {
+  if (userAnswer !== String(answer)) {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
     return false;
   }
