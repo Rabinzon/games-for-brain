@@ -6,15 +6,23 @@
 
 [![Issue Count](https://codeclimate.com/github/Rabinzon/project-lvl1-s128/badges/issue_count.svg)](https://codeclimate.com/github/Rabinzon/project-lvl1-s128)
 [![Build Status](https://travis-ci.org/Rabinzon/project-lvl1-s128.svg)](https://travis-ci.org/Rabinzon/project-lvl1-s128)
-[![npm version](https://badge.fury.io/js/games-for-brain.svg)](https://badge.fury.io/js/games-for-brain)
+[![NPM](https://nodei.co/npm/games-for-brain.png)](https://nodei.co/npm/games-for-brain/)
 ### Quick start:
 
 ```sh
 $ npm i -g games-for-brain
-$ brain-games
+$ brain-even
 ```
+
+### Available games:
+- brain-even
+- brain-calc
+- brain-gcd
+- brain-prime
+- brain-balance
+- brain-progression
 
 ### Running in dev mode
 ```sh
-$ make install start
+$ make install start game=$(game-name)
 ```
