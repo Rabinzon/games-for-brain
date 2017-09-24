@@ -14,7 +14,7 @@ const getQuestionAndAnswer = () => {
 
   return {
     question: `${leftInt} ${rightInt}`,
-    answer: String(gcd(leftInt, rightInt)),
+    answer: gcd(leftInt, rightInt),
   };
 };
 

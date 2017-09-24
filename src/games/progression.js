@@ -14,7 +14,7 @@ const getQuestionAndAnswer = () => {
   const sequenceStartNumber = getRandomInt(1, 70);
   const randomIndex = getRandomInt(0, 9);
   const sequenceArray = generateSequenceArray(sequenceStartNumber, difference);
-  const answer = String(sequenceArray[randomIndex]);
+  const answer = sequenceArray[randomIndex];
   const question = sequenceArray.map((val, i) => (i === randomIndex ? ' ..' : val)).join(' ');
 
   return {

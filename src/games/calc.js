@@ -29,8 +29,8 @@ const getQuestionAndAnswer = () => {
   const answer = operation.method(randomLeftNumber, randomRightNumber);
 
   return {
+    answer,
     question,
-    answer: String(answer),
   };
 };
 
