@@ -1,13 +1,13 @@
-import Game from '..';
+import game from '..';
 import getRandomInt from '../utils';
 
-const SEQUENCE_LENGTH = 10;
+const sequenceLength = 10;
 
 const gameDescription = 'What number is missing in this progression?';
 
-const generateSequenceArray = (sequencestartnumber, difference) =>
-  Array(...{ length: SEQUENCE_LENGTH })
-    .map((_, i) => sequencestartnumber + (i * difference));
+const generateSequenceArray = (sequenceStartNumber, difference) =>
+  Array(...{ length: sequenceLength })
+    .map((_, i) => sequenceStartNumber + (i * difference));
 
 const getQuestionAndAnswer = () => {
   const difference = getRandomInt(3, 43);
@@ -23,4 +23,4 @@ const getQuestionAndAnswer = () => {
   };
 };
 
-export default () => Game(gameDescription, getQuestionAndAnswer);
+export default () => game(gameDescription, getQuestionAndAnswer);

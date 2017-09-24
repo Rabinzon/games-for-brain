@@ -1,4 +1,4 @@
-import Game from '..';
+import game from '..';
 import getRandomInt from '../utils';
 
 const gameDescription = 'Balance the given number.';
@@ -40,4 +40,4 @@ const getQuestionAndAnswer = () => {
   };
 };
 
-export default () => Game(gameDescription, getQuestionAndAnswer);
+export default () => game(gameDescription, getQuestionAndAnswer);

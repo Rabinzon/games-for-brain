@@ -1,4 +1,4 @@
-import Game from '..';
+import game from '..';
 import getRandomInt from '../utils';
 
 const add = (x, y) => x + y;
@@ -34,4 +34,4 @@ const getQuestionAndAnswer = () => {
   };
 };
 
-export default () => Game(gameDescription, getQuestionAndAnswer);
+export default () => game(gameDescription, getQuestionAndAnswer);

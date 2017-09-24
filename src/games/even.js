@@ -1,4 +1,4 @@
-import Game from '..';
+import game from '..';
 import getRandomInt from '../utils';
 
 const isEven = num => (num % 2) === 0;
@@ -15,4 +15,4 @@ const getQuestionAndAnswer = () => {
   };
 };
 
-export default () => Game(gameDescription, getQuestionAndAnswer);
+export default () => game(gameDescription, getQuestionAndAnswer);

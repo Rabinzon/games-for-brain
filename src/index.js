@@ -1,14 +1,13 @@
 import readlineSync from 'readline-sync';
 
-const NUMBER_OF_QUIZES = 3;
+const numberOfQuizes = 3;
 
 const play = (getQuestionAndAnswer, i = 0) => {
-  if (i === NUMBER_OF_QUIZES) return true;
+  if (i === numberOfQuizes) return true;
 
   const { question, answer } = getQuestionAndAnswer();
-  const userAnswer = readlineSync.question(`Question: ${question} `);
-
-  console.log(`Your answer: ${userAnswer}`);
+  console.log(`Question: ${question} `);
+  const userAnswer = readlineSync.question(`Your answer: `);
 
   if (userAnswer !== answer) {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
