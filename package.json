@@ -1,6 +1,6 @@
 {
   "name": "games-for-brain",
-  "version": "0.1.2",
+  "version": "0.2.0-alpha.0",
   "description": "Simple command line game",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -12,6 +12,7 @@
     "brain-prime": "dist/bin/brain-prime.js"
   },
   "scripts": {
+    "release": "standard-version",
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublish": "npm run lint && npm run build",
@@ -42,7 +43,8 @@
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.7.0",
     "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.7.0"
+    "eslint-plugin-import": "^2.7.0",
+    "standard-version": "^4.2.0"
   },
   "dependencies": {
     "readline-sync": "^1.4.7"

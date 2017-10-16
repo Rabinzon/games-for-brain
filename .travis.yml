@@ -3,3 +3,9 @@ node_js:
   - stable
 
 script: make lint
+deploy:
+  provider: npm
+  email: ildarrazin@gmail.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
