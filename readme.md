@@ -4,8 +4,8 @@
 
 #### Simple command line games.
 
-[![Issue Count](https://codeclimate.com/github/Rabinzon/project-lvl1-s128/badges/issue_count.svg)](https://codeclimate.com/github/Rabinzon/project-lvl1-s128)
-[![Build Status](https://travis-ci.org/Rabinzon/project-lvl1-s128.svg)](https://travis-ci.org/Rabinzon/project-lvl1-s128)
+[![Maintainability](https://api.codeclimate.com/v1/badges/50a89fd59cecb6edeef7/maintainability)](https://codeclimate.com/github/Rabinzon/games-for-brain/maintainability)
+[![Build Status](https://travis-ci.org/Rabinzon/games-for-brain.svg?branch=master)](https://travis-ci.org/Rabinzon/games-for-brain)
 [![NPM](https://nodei.co/npm/games-for-brain.png)](https://nodei.co/npm/games-for-brain/)
 ### Quick start:
 
