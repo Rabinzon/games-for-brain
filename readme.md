@@ -1,4 +1,4 @@
-# Games for brain [npm module](https://www.npmjs.com/games-for-brain)
+# Games for brain [npm](https://www.npmjs.com/games-for-brain)
 
 ![alt text](https://secure.gravatar.com/avatar/9d9d4a13a4043be9a01843fa4edd605e?s=200&r=pg&d=https%3A%2F%2Fb6d3e9q9.ssl.hwcdn.net%2Fimg%2Fno-avatar-3.png "brain-games logo")
 
@@ -13,6 +13,8 @@
 $ npm i -g games-for-brain
 $ brain-even
 ```
+
+![](https://api.monosnap.com/rpc/file/download?id=krohItTPsDo2c8SkSiiqxAhYrcwpaS)
 
 ### Available games:
 - brain-even

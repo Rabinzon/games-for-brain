@@ -1,6 +1,6 @@
 {
   "name": "games-for-brain",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Simple command line game",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -47,6 +47,7 @@
     "standard-version": "^4.2.0"
   },
   "dependencies": {
-    "readline-sync": "^1.4.7"
+    "readline-sync": "^1.4.7",
+    "terminal-menu": "^2.1.1"
   }
 }
